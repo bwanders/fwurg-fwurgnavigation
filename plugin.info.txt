@@ -1,0 +1,7 @@
+base   fwurgnavigation
+author Brend Wanders
+email  b.wanders@utwente.nl
+date   2012-08-15
+name   FWURG Navigation
+desc   Navigation box construction and template helper
+url    http://github.com/bwanders/fwurg-fwurgnavigation
