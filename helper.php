@@ -39,7 +39,7 @@ class helper_plugin_fwurgnavigation extends DokuWiki_Plugin {
         foreach($navigations as $navigation) {
             $variables = array();
             foreach($navigation['variables'] as $key=>$value) {
-                $variables[$key] = array($value);
+                $variables[strtolower($key)] = array($value);
             }
     
             $handler = new stratatemplatery_handler(
