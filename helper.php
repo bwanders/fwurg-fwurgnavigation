@@ -35,12 +35,23 @@ class helper_plugin_fwurgnavigation extends DokuWiki_Plugin {
         $R->acronyms = getAcronyms();
         $R->interwiki = getInterwiki();
 
+        $seen = array();
+
         // process each navigation box
         foreach($navigations as $navigation) {
             $variables = array();
             foreach($navigation['variables'] as $key=>$value) {
                 $variables[strtolower($key)] = array($value);
             }
+
+            // construct navbox item
+            $current = array($navigation['template']['page'], $navigation['template']['hash'], $variables);
+
+            // check if we have already seen it to prevent duplication
+            if(in_array($current, $seen)) continue;
+
+            // add the current item to the list of seen navboxes
+            $seen[] = $current;
     
             $handler = new stratatemplatery_handler(
                 $variables,
