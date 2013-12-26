@@ -13,8 +13,8 @@ if (!defined('DOKU_INC')) die('meh.');
  */
 class helper_plugin_fwurgnavigation extends DokuWiki_Plugin {
     function helper_plugin_fwurgnavigation() {
-        $this->types =& plugin_load('helper', 'stratastorage_types');
-        $this->triples =& plugin_load('helper', 'stratastorage_triples');
+        $this->types =& plugin_load('helper', 'strata_util');
+        $this->triples =& plugin_load('helper', 'strata_triples');
 
         $this->templatery =& plugin_load('helper', 'templatery');
     }
